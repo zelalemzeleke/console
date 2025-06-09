@@ -1,0 +1,84 @@
+🚨 Emergency Response Simulation
+A console-based simulation that models the response of emergency units—Police, Firefighters, and Ambulance—to randomly generated incidents in a city. This project demonstrates object-oriented principles such as abstraction, inheritance, and polymorphism in C# (or any object-oriented language).
+
+📖 Scenario
+Imagine a busy city where incidents such as crimes, fires, and medical emergencies occur randomly at various locations. Your task is to simulate the response of emergency units:
+
+🚓 Police respond to Crime
+
+🚒 Firefighters respond to Fire
+
+🚑 Ambulances respond to Medical emergencies
+
+The simulation runs in the console over 5 rounds and tracks how effectively the units respond to incidents.
+
+🧱 Technical Structure
+🔹 EmergencyUnit (Abstract Class)
+Defines shared behavior and structure for all emergency units.
+
+Properties:
+
+Name (string)
+
+Speed (int)
+
+Abstract Methods:
+
+bool CanHandle(string incidentType)
+
+void RespondToIncident(Incident incident)
+
+🔹 Subclasses of EmergencyUnit
+Each unit type handles only a specific type of incident:
+
+Police: Handles "Crime"
+
+Firefighter: Handles "Fire"
+
+Ambulance: Handles "Medical"
+
+Each subclass implements CanHandle() and RespondToIncident() accordingly.
+
+🔹 Incident Class
+Represents a real-time emergency in the city.
+
+Properties:
+
+Type (string): One of "Fire", "Crime", "Medical"
+
+Location (string): A randomly selected city location
+
+🎮 Simulation Game Loop
+The simulation runs for 5 rounds. In each round:
+
+A random incident is generated.
+
+The system checks which emergency unit can respond using CanHandle().
+
+The appropriate unit responds using RespondToIncident().
+
+Points are awarded:
+
+✅ +10 points for correct handling
+
+❌ -5 points if no unit can handle the incident
+
+The current score is displayed after each round.
+
+💻 Sample Console Output
+pgsql
+Copy
+Edit
+--- Turn 3 ---
+Incident: Medical at City Hall
+Ambulance Unit 1 is treating patients at City Hall.
++10 points
+Current Score: 30
+✅ Features
+Demonstrates core OOP principles (Abstraction, Inheritance, Polymorphism)
+
+Randomized incident generation
+
+Real-time decision making and scoring
+
+Simple and clean console output
